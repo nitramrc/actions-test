@@ -1,5 +1,5 @@
-# .github/workflows/my-workflow.yml
 name: My Workflow
+
 on:
   workflow_dispatch:
     inputs:
@@ -7,13 +7,11 @@ on:
         description: 'Choose environment'
         required: true
         default: 'production'
-        options:
-          - production
-          - staging
-          - development
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Show input
-        run: echo "Running in environment: ${{ github.event.inputs.environment }}"
+        run: |
+          echo "Running in environment: ${{ github.event.inputs.environment }}"
