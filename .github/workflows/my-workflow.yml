@@ -7,7 +7,6 @@ on:
         description: 'Choose environment'
         required: true
         default: 'production'
-        type: choice
         options:
           - production
           - staging
