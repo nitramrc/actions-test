@@ -7,6 +7,10 @@ on:
         description: 'Choose environment'
         required: true
         default: 'production'
+      tf_apply:
+        description: 'apply'
+        required: true
+        default: 'false'
 
 jobs:
   build:
@@ -15,3 +19,4 @@ jobs:
       - name: Show input
         run: |
           echo "Running in environment: ${{ github.event.inputs.environment }}"
+          echo "Apply : ${{ github.event.inputs.tf_apply }}"
